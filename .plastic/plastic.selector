@@ -1,0 +1,4 @@
+repository "Paranoimia Nightmares@LeevaroyGT@cloud"
+  path "/"
+    br "/main"
+    co "/main"
