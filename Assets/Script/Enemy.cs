@@ -73,8 +73,9 @@ public class Enemy : MonoBehaviour
                 soundManager.PlayEnemy3Sound();
                 break;
             default:
-                soundManager.PlayEnemySound();
+                soundManager.PlayEnemy3Sound();
                 break;
+
         }
     }
 
@@ -110,7 +111,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
