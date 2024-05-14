@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -53,7 +53,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,18 +108,586 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
+    sprites:
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9807e12e6215a4f82116bc7e8fce3e
+      internalID: 328830088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067f83eaae983cb49a065acd988915fb
+      internalID: 676279078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e15b93c80ad064bae183d7a712cb88
+      internalID: 311163093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6214ece7cd1438c4eb9edf0756389b66
+      internalID: 380328385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84d5d54c732872449419ce5428c1150
+      internalID: 770107002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_5
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a41bd2e7452cf143881dcd6bbf7ed1a
+      internalID: 352177979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47fe60180ba7c246b84c03c90edcc16
+      internalID: -1937505130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec34aea30be4111439c1fcb326a226ac
+      internalID: 649954331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410405762c4dade49867d54e5f4639cc
+      internalID: 1502908846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913830dd1b81de6469f8bb3ddbedb240
+      internalID: -1293524617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8367aba522358a47b972ca49cf0191d
+      internalID: 828693848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c857715a78e5f1419ee5c21e9a7a084
+      internalID: 403277782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f30bd35d8fadb4b8abc74353cdac90
+      internalID: 1972468347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_13
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557aaeec3eb534645a73bab440902d3c
+      internalID: 492537063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3fe9b1bdd3e49459edf78f14c81aa3
+      internalID: 1500637239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1359c3a46408974b861f240534372c1
+      internalID: 569581877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76788020f9674b34e8c213796011cc52
+      internalID: 194015124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_17
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bfe43b46a08f040b223f39760d18b4
+      internalID: -1185842456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84919732acc94314584995f40ffda781
+      internalID: -1279882237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c733355657d2f4e848a44d79c099c5
+      internalID: 1708549097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65883ff47e56555448a9c3455f82cccc
+      internalID: 997468824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nol SPRITES COMPLETED game_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7955283f912a434fb8089e77a5523e0
+      internalID: -193217344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -344, y: 273}
+      - {x: -344, y: 354}
+      - {x: -297, y: 354}
+      - {x: -297, y: 273}
+    - - {x: -214, y: 275}
+      - {x: -214, y: 351}
+      - {x: -170, y: 351}
+      - {x: -170, y: 275}
+    - - {x: -341, y: 153}
+      - {x: -341, y: 223}
+      - {x: -304, y: 223}
+      - {x: -304, y: 153}
+    - - {x: -213, y: 151}
+      - {x: -213, y: 223}
+      - {x: -176, y: 223}
+      - {x: -176, y: 151}
+    - - {x: -87, y: 149}
+      - {x: -87, y: 223}
+      - {x: -47, y: 223}
+      - {x: -47, y: 149}
+    - - {x: 41, y: 151}
+      - {x: 41, y: 223}
+      - {x: 81, y: 223}
+      - {x: 81, y: 151}
+    - - {x: -341, y: 16}
+      - {x: -341, y: 95}
+      - {x: -297, y: 95}
+      - {x: -297, y: 16}
+    - - {x: -214, y: 18}
+      - {x: -214, y: 96}
+      - {x: -170, y: 96}
+      - {x: -170, y: 18}
+    - - {x: -85, y: 12}
+      - {x: -85, y: 104}
+      - {x: -41, y: 104}
+      - {x: -41, y: 12}
+    - - {x: 40, y: 11}
+      - {x: 40, y: 110}
+      - {x: 92, y: 110}
+      - {x: 92, y: 11}
+    - - {x: -347, y: -113}
+      - {x: -347, y: -32}
+      - {x: -290, y: -32}
+      - {x: -290, y: -113}
+    - - {x: -218, y: -112}
+      - {x: -218, y: -31}
+      - {x: -164, y: -31}
+      - {x: -164, y: -112}
+    - - {x: -88, y: -116}
+      - {x: -88, y: -23}
+      - {x: -19, y: -23}
+      - {x: -19, y: -116}
+    - - {x: 32, y: -122}
+      - {x: 32, y: -29}
+      - {x: 107, y: -29}
+      - {x: 107, y: -122}
+    - - {x: -367, y: -245}
+      - {x: -367, y: -158}
+      - {x: -293, y: -158}
+      - {x: -293, y: -245}
+    - - {x: -246, y: -248}
+      - {x: -246, y: -153}
+      - {x: -166, y: -153}
+      - {x: -166, y: -248}
+    - - {x: -122, y: -247}
+      - {x: -122, y: -160}
+      - {x: -31, y: -160}
+      - {x: -31, y: -247}
+    - - {x: -345, y: -368}
+      - {x: -345, y: -288}
+      - {x: -296, y: -288}
+      - {x: -296, y: -368}
+    - - {x: -214, y: -368}
+      - {x: -214, y: -291}
+      - {x: -169, y: -291}
+      - {x: -169, y: -368}
+    - - {x: -87, y: -381}
+      - {x: -87, y: -289}
+      - {x: -40, y: -289}
+      - {x: -40, y: -381}
+    - - {x: 38, y: -380}
+      - {x: 38, y: -291}
+      - {x: 90, y: -291}
+      - {x: 90, y: -380}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nol SPRITES COMPLETED game_0: 328830088
+      nol SPRITES COMPLETED game_1: 676279078
+      nol SPRITES COMPLETED game_10: 828693848
+      nol SPRITES COMPLETED game_11: 403277782
+      nol SPRITES COMPLETED game_12: 1972468347
+      nol SPRITES COMPLETED game_13: 492537063
+      nol SPRITES COMPLETED game_14: 1500637239
+      nol SPRITES COMPLETED game_15: 569581877
+      nol SPRITES COMPLETED game_16: 194015124
+      nol SPRITES COMPLETED game_17: -1185842456
+      nol SPRITES COMPLETED game_18: -1279882237
+      nol SPRITES COMPLETED game_19: 1708549097
+      nol SPRITES COMPLETED game_2: 311163093
+      nol SPRITES COMPLETED game_20: 997468824
+      nol SPRITES COMPLETED game_21: -193217344
+      nol SPRITES COMPLETED game_3: 380328385
+      nol SPRITES COMPLETED game_4: 770107002
+      nol SPRITES COMPLETED game_5: 352177979
+      nol SPRITES COMPLETED game_6: -1937505130
+      nol SPRITES COMPLETED game_7: 649954331
+      nol SPRITES COMPLETED game_8: 1502908846
+      nol SPRITES COMPLETED game_9: -1293524617
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
