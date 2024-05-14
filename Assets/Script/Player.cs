@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private SoundManager soundManager;
+
     public float speed = 5f; // Adjust this to change the player speed
     public GameObject bulletPrefab; // Prefab of the bullet
     public Transform bulletSpawnPoint; // Point where bullets will be spawned
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth; // Set the current health to the max health when the game starts
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     void Update()
@@ -30,6 +33,11 @@ public class Player : MonoBehaviour
         Vector3 movement = new Vector3(horizontalInput, verticalInput, 0) * speed * Time.deltaTime;
         transform.Translate(movement);
 
+        // Playing walk sound when moving
+        if (Input.GetAxis("Horizontal") !=0 || Input.GetAxis("Vertical") !=0)
+        {
+            soundManager.PlayWalkSound(true);
+        }
 
         // Flip player's sprite if moving left
         if (horizontalInput < 0)
@@ -86,6 +94,8 @@ public class Player : MonoBehaviour
         // Destroy bullet after some time
         Destroy(bullet, 2f);
 
+        // Playing shooting sound
+        soundManager.PlayShootingSound(true);
 
     }
 
@@ -106,6 +116,8 @@ public class Player : MonoBehaviour
                 immunityTimer = immunityDuration;
             }
         }
+
+        soundManager.PlayCharacterSound();
     }
 
     void Die()
