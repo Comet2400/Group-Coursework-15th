@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 
     public int maxHealth = 50; // Maximum health of the enemy
     public float moveSpeed = 3f; // Speed at which the enemy moves
-    public float attackRange = 1.5f; // Range at which the enemy can attack
+    public float attackRange = 0.5f; // Range at which the enemy can attack
     public int attackDamage = 10; // Damage dealt by the enemy
 
     private int currentHealth; // Current health of the enemy
