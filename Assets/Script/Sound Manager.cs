@@ -65,6 +65,16 @@ public class SoundManager : MonoBehaviour
         audioSource.PlayOneShot(EnemySound);
     }
 
+    public void PlayEnemy2Sound()
+    {
+        audioSource.PlayOneShot(EnemySound2);
+    }
+
+    public void PlayEnemy3Sound()
+    {
+        audioSource.PlayOneShot(EnemySound3);
+    }
+
     public void PlayFlashlightSound(bool flashLightOn)
     {
         audioSource.PlayOneShot(flashLightOn ? FlashLight1 : FlashLight2);
