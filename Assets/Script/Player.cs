@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab; // Prefab of the bullet
     public Transform bulletSpawnPoint; // Point where bullets will be spawned
     public float bulletSpeed = 10f; // Speed of the bullet
+    public float shootingCooldown = 0.5f;
+    private float lastShotTime;
     public int maxHealth = 100; // Max Health of the player
 
     public float immunityDuration = 3f; //Duration of immunity after collsion
@@ -60,9 +62,10 @@ public class Player : MonoBehaviour
         }
 
         // Shooting
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time >= lastShotTime + shootingCooldown)
         {
             Shoot();
+            lastShotTime = Time.time;
         }
 
         // Update immunity timer
@@ -81,7 +84,7 @@ public class Player : MonoBehaviour
     {
 
 
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
         // Calculate direction based on player's orientation
         Vector2 shootDirection = Vector2.right; // Default direction is right
@@ -104,17 +107,14 @@ public class Player : MonoBehaviour
         // Destroy bullet after some time
         Destroy(bullet, 2f);
 
-        // Play weapon loading sound
-        soundManager.PlayWeaponLoadingSound();
+        soundManager.PlayShootingSound();
+        
 
-        FireWeapon();
+        
 
     }
 
-    void FireWeapon()
-    {
-        soundManager.PlayWeaponFiringSound();
-    }
+   
 
     // Function to decrease player's health
     void TakeDamage(int damage)

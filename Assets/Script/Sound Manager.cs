@@ -13,24 +13,12 @@ public class SoundManager : MonoBehaviour
     public AudioClip EnemySound3;
     public AudioClip FlashLight1;
     public AudioClip FlashLight2;
-    public AudioClip ShootingSound1;
-    public AudioClip shootingSound2;
+    public AudioClip shootingSound;
     public AudioClip WalkSound1;
     public AudioClip WalkSound2;
 
     private AudioSource audioSource;
 
-
-    //Play weapon loading sound:
-    public void PlayWeaponLoadingSound()
-    {
-        audioSource.PlayOneShot(ShootingSound1);
-    }
-
-    public void PlayWeaponFiringSound()
-    {
-        audioSource.PlayOneShot(shootingSound2);
-    }
 
     private void Awake()
     {
@@ -80,9 +68,9 @@ public class SoundManager : MonoBehaviour
         audioSource.PlayOneShot(flashLightOn ? FlashLight1 : FlashLight2);
     }
 
-    public void PlayShootingSound(bool useSound1)
+    public void PlayShootingSound()
     {
-        audioSource.PlayOneShot(useSound1 ? ShootingSound1 : shootingSound2);
+        audioSource.PlayOneShot(shootingSound);
     }
 
     public void PlayWalkSound(bool useSound1)
@@ -95,7 +83,7 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
