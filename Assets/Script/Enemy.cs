@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private SoundManager soundManager;
+
+    public int enemyType; // storing the 3 different enemies for their different sounds
 
     public int maxHealth = 50; // Maximum health of the enemy
     public float moveSpeed = 3f; // Speed at which the enemy moves
@@ -19,7 +22,7 @@ public class Enemy : MonoBehaviour
     {
         currentHealth = maxHealth; // Set current health to maximum health when the game starts
         player = GameObject.FindGameObjectWithTag("Player").transform; // Find the player's transform
-
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     
@@ -48,7 +51,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    // Function to decrease enemy's health
+    // Function to handle enemy's health and damage
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -57,13 +60,30 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+
+        switch (enemyType) 
+        {
+            case 1:
+                soundManager.PlayEnemySound();
+                break;
+            case 2:
+                soundManager.PlayEnemy2Sound();
+                break;
+            case 3:
+                soundManager.PlayEnemy3Sound();
+                break;
+            default:
+                soundManager.PlayEnemy3Sound();
+                break;
+
+        }
     }
 
     void Die()
     {
-        // Destroy the enemy object
+
         Destroy(gameObject);
-        // Implement actions to take when the enemy dies, like adding score or dropping items
+        
     }
 
     // Function to attack the player
@@ -88,6 +108,14 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerInRange = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            soundManager.PlayEnemySound();
         }
     }
 

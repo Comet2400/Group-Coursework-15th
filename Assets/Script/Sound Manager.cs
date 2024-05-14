@@ -20,6 +20,18 @@ public class SoundManager : MonoBehaviour
 
     private AudioSource audioSource;
 
+
+    //Play weapon loading sound:
+    public void PlayWeaponLoadingSound()
+    {
+        audioSource.PlayOneShot(ShootingSound1);
+    }
+
+    public void PlayWeaponFiringSound()
+    {
+        audioSource.PlayOneShot(shootingSound2);
+    }
+
     private void Awake()
     {
         if (instance == null)
@@ -51,6 +63,16 @@ public class SoundManager : MonoBehaviour
     public void PlayEnemySound() 
     {
         audioSource.PlayOneShot(EnemySound);
+    }
+
+    public void PlayEnemy2Sound()
+    {
+        audioSource.PlayOneShot(EnemySound2);
+    }
+
+    public void PlayEnemy3Sound()
+    {
+        audioSource.PlayOneShot(EnemySound3);
     }
 
     public void PlayFlashlightSound(bool flashLightOn)
