@@ -20,6 +20,18 @@ public class SoundManager : MonoBehaviour
 
     private AudioSource audioSource;
 
+
+    //Play weapon loading sound:
+    public void PlayWeaponLoadingSound()
+    {
+        audioSource.PlayOneShot(ShootingSound1);
+    }
+
+    public void PlayWeaponFiringSound()
+    {
+        audioSource.PlayOneShot(shootingSound2);
+    }
+
     private void Awake()
     {
         if (instance == null)

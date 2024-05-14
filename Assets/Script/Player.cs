@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private bool isImmune = false; // Flag to track the player's immunity status
     private float immunityTimer = 0f; //Timer to track immunity duration 
 
+    public float walkingSoundCooldown = 0.5f;
+    private float walkingSoundTimer;
 
     private int currentHealth; // Current health of the player
 
@@ -36,7 +38,15 @@ public class Player : MonoBehaviour
         // Playing walk sound when moving
         if (Input.GetAxis("Horizontal") !=0 || Input.GetAxis("Vertical") !=0)
         {
-            soundManager.PlayWalkSound(true);
+
+            //check if enough time passed since last walk sound
+            if (Time.time >= walkingSoundTimer) 
+            { 
+                 soundManager.PlayWalkSound(true);
+
+                //set timer for next walking sound after cooldown
+                walkingSoundTimer = Time.time + walkingSoundCooldown;
+            }
         }
 
         // Flip player's sprite if moving left
@@ -94,9 +104,16 @@ public class Player : MonoBehaviour
         // Destroy bullet after some time
         Destroy(bullet, 2f);
 
-        // Playing shooting sound
-        soundManager.PlayShootingSound(true);
+        // Play weapon loading sound
+        soundManager.PlayWeaponLoadingSound();
 
+        FireWeapon();
+
+    }
+
+    void FireWeapon()
+    {
+        soundManager.PlayWeaponFiringSound();
     }
 
     // Function to decrease player's health
