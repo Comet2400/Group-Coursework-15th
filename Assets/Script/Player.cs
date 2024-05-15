@@ -133,7 +133,12 @@ public class Player : MonoBehaviour
 
     }
 
-   
+    public void IncreaseMaxHealth(int amount)
+    {
+        maxHealth += amount;
+        currentHealth = maxHealth;
+        Debug.Log("Max health increased to: " + maxHealth);
+    }
 
     // Function to decrease player's health
     void TakeDamage(int damage)
