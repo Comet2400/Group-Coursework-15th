@@ -78,6 +78,12 @@ public class Player : MonoBehaviour
             lastShotTime = Time.time;
         }
 
+        //if (Input.GetAxis("Joystick 0") && Time.time >= lastShotTime + shootingCooldown)
+        //{
+        //    Shoot();
+        //    lastShotTime = Time.time;
+        //}
+
         // Update immunity timer
         if (isImmune)
         {
