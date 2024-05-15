@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -11,21 +12,21 @@ public class Player : MonoBehaviour
     private bool isShooting = false;
 
     public float speed = 5f; // Adjust this to change the player speed
-    public GameObject bulletPrefab; // Prefab of the bullet
-    public Transform bulletSpawnPoint; // Point where bullets will be spawned
-    public float bulletSpeed = 10f; // Speed of the bullet
+    public GameObject bulletPrefab; 
+    public Transform bulletSpawnPoint;
+    public float bulletSpeed = 10f; 
     public float shootingCooldown = 0.5f;
     private float lastShotTime;
-    public int maxHealth = 100; // Max Health of the player
+    public int maxHealth = 100; 
 
-    public float immunityDuration = 3f; //Duration of immunity after collsion
+    public float immunityDuration = 3f; 
     private bool isImmune = false; // Flag to track the player's immunity status
     private float immunityTimer = 0f; //Timer to track immunity duration 
 
     public float walkingSoundCooldown = 0.5f;
     private float walkingSoundTimer;
 
-    private int currentHealth; // Current health of the player
+    private int currentHealth;
 
     private Dash dash;
 
@@ -47,10 +48,10 @@ public class Player : MonoBehaviour
         Vector3 movement = new Vector3(horizontalInput, verticalInput, 0) * speed * Time.deltaTime;
         transform.Translate(movement);
 
-        // Playing walk sound when moving
+        
         if (horizontalInput != 0 || verticalInput != 0)
         {
-            // Character is moving
+            
             if (horizontalInput > 0)
             {
                 // Moving right
@@ -74,7 +75,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            // Character is not moving
+            // Character is idle
             animator.SetInteger("Direction", -1); // Set to idle animation
 
         }
@@ -86,7 +87,7 @@ public class Player : MonoBehaviour
             isDashing = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isShooting)
+        if (Input.GetMouseButtonDown(0) && isShooting) // animate shooting
         {
             animator.SetTrigger("Shoot");
             isShooting = true;
@@ -119,7 +120,7 @@ public class Player : MonoBehaviour
 
 
         // Shooting
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time >= lastShotTime + shootingCooldown)
+        if (Input.GetMouseButtonDown(0) && Time.time >= lastShotTime + shootingCooldown)
         {
             Shoot();
             lastShotTime = Time.time;
@@ -166,36 +167,54 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
+        // Trigger shooting animation
+        animator.SetTrigger("Shoot");
 
+        // Determine bullet direction based on player's animation state
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector2 direction = Vector2.zero;
 
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-
-        // Calculate direction based on player's orientation
-        Vector2 shootDirection = Vector2.right; // Default direction is right
-        if (transform.localScale.x < 0) // If player is facing left
+        // Set bullet direction based on player's animation state
+        if (horizontalInput > 0)
         {
-            shootDirection = -Vector2.right; // Shoot left
+            // Moving right
+            direction = Vector2.right;
         }
-        else if (transform.up.y > 0) // If player is facing up
+        else if (horizontalInput < 0)
         {
-            shootDirection = Vector2.up; // Shoot up
+            // Moving left
+            direction = Vector2.left;
         }
-        else if (transform.up.y < 0) // If player is facing down
+        else if (verticalInput > 0)
         {
-            shootDirection = -Vector2.up; // Shoot down
+            // Moving up
+            direction = Vector2.up;
+        }
+        else if (verticalInput < 0)
+        {
+            // Moving down
+            direction = Vector2.down;
+        }
+        else
+        {
+            // Default direction (right)
+            direction = Vector2.right;
         }
 
-        // Set bullet's velocity to move in the calculated direction with a constant speed
-        bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletSpeed;
+        // Instantiate bullet
+        GameObject bulletObject = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+        Bullet bullet = bulletObject.GetComponent<Bullet>(); // Get Bullet component
 
-        // Destroy bullet after some time
-        Destroy(bullet, 2f);
+        // Set bullet direction
+        if (bullet != null)
+        {
+            bullet.SetDirection(direction);
+        }
 
-        soundManager.PlayShootingSound();
-        
-
-        
-
+        // Rotate bullet to face its direction
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        bulletObject.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
     public void IncreaseMaxHealth(int amount)
@@ -228,9 +247,9 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        // Destroy the player object
+        
         Destroy(gameObject);
-        // Implement actions to take when the player dies, like game over or reset
+        
         Debug.Log("Player died!");
     }
 
@@ -239,14 +258,14 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            TakeDamage(10); //reduce player health by 10 when colliding with an enemy
+            TakeDamage(10); 
             Debug.Log("Player damaged!");
         }
     }
 
 
 
-    // Function to handle collision with enemies
+    
     void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
