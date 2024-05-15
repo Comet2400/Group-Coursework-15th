@@ -23,10 +23,14 @@ public class Player : MonoBehaviour
 
     private int currentHealth; // Current health of the player
 
+    private Dash dash;
+
     void Start()
     {
         currentHealth = maxHealth; // Set the current health to the max health when the game starts
         soundManager = FindObjectOfType<SoundManager>();
+
+        dash = GetComponent<Dash>();
     }
 
     void Update()
@@ -61,6 +65,12 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1); // Reset to normal scale
         }
 
+        if (Input.GetKeyDown(KeyCode.X)) 
+        {
+            AttemptDash();
+        }
+
+
         // Shooting
         if (Input.GetKeyDown(KeyCode.Space) && Time.time >= lastShotTime + shootingCooldown)
         {
@@ -76,6 +86,15 @@ public class Player : MonoBehaviour
             {
                 isImmune = false;
             }
+        }
+    }
+
+    void AttemptDash()
+    {
+
+        if (dash != null) 
+        {
+            dash.AttemptDash();
         }
     }
 
