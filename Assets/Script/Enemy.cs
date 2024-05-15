@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     private Transform player; // Reference to the player's transform
     private bool isPlayerInRange; // Flag to track if the player is in attack range
 
-    public float targetRadius = -100f;
+    public float targetRadius = 10f;
 
    
     void Start()
