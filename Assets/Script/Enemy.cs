@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     private Transform player; // Reference to the player's transform
     private bool isPlayerInRange; // Flag to track if the player is in attack range
 
+    public float targetRadius = -100f;
+
    
     void Start()
     {
@@ -29,21 +31,18 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if (player != null)
-        {
+       {
+            // Calculate the distance between the enemy and the player
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-            // Calculate the direction to move towards the player
-            Vector3 moveDirection = (player.position - transform.position).normalized;
-
-            // Move the enemy towards the player at a constant speed
-            transform.position += moveDirection * moveSpeed * Time.deltaTime;
-
-            // Move towards the player if they are in range
-            if (isPlayerInRange)
+            // Check if the player is within the target radius
+            if (distanceToPlayer <= targetRadius)
             {
+                // Move towards the player if they are in range
                 transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
                 // Attack the player if in range
-                if (Vector2.Distance(transform.position, player.position) <= attackRange)
+                if (distanceToPlayer <= attackRange)
                 {
                     AttackPlayer();
                 }
