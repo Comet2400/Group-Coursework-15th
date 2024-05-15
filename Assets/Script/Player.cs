@@ -6,6 +6,10 @@ public class Player : MonoBehaviour
 {
     private SoundManager soundManager;
 
+   private Animator animator;
+    private bool isDashing = false;
+    private bool isShooting = false;
+
     public float speed = 5f; // Adjust this to change the player speed
     public GameObject bulletPrefab; // Prefab of the bullet
     public Transform bulletSpawnPoint; // Point where bullets will be spawned
@@ -31,6 +35,8 @@ public class Player : MonoBehaviour
         soundManager = FindObjectOfType<SoundManager>();
 
         dash = GetComponent<Dash>();
+
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -42,8 +48,49 @@ public class Player : MonoBehaviour
         transform.Translate(movement);
 
         // Playing walk sound when moving
-        if (Input.GetAxis("Horizontal") !=0 || Input.GetAxis("Vertical") !=0)
+        if (horizontalInput != 0 || verticalInput != 0)
         {
+            // Character is moving
+            if (horizontalInput > 0)
+            {
+                // Moving right
+                animator.SetInteger("Direction", 3);
+            }
+            else if (horizontalInput < 0)
+            {
+                // Moving left
+                animator.SetInteger("Direction", 2);
+            }
+            else if (verticalInput > 0)
+            {
+                // Moving up
+                animator.SetInteger("Direction", 1);
+            }
+            else if (verticalInput < 0)
+            {
+                // Moving down
+                animator.SetInteger("Direction", 0);
+            }
+        }
+        else
+        {
+            // Character is not moving
+            animator.SetInteger("Direction", -1); // Set to idle animation
+
+        }
+
+        //animate dashing
+        if (Input.GetKeyDown(KeyCode.X) && isDashing) 
+        {
+            animator.SetTrigger("Dash");
+            isDashing = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && isShooting)
+        {
+            animator.SetTrigger("Shoot");
+            isShooting = true;
+        }
 
             //check if enough time passed since last walk sound
             if (Time.time >= walkingSoundTimer) 
@@ -53,7 +100,7 @@ public class Player : MonoBehaviour
                 //set timer for next walking sound after cooldown
                 walkingSoundTimer = Time.time + walkingSoundCooldown;
             }
-        }
+        
 
         // Flip player's sprite if moving left
         if (horizontalInput < 0)
@@ -93,6 +140,18 @@ public class Player : MonoBehaviour
                 isImmune = false;
             }
         }
+
+       
+    }
+
+    public void ResetDashFlag()
+    {
+        isDashing = false;
+    }
+
+    public void ResetShootFlag()
+    {
+        isShooting = false;
     }
 
     void AttemptDash()
